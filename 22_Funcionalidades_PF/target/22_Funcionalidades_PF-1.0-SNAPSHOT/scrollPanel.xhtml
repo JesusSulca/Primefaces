@@ -1,0 +1,229 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>ScrollPanel</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {
+                background-color: white
+            }
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: white">  
+                <p:menuitem value="Accordion" url="./acordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./scrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./tabView.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="PanelGrid" url="./panelGrid.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;">ScrollPanel</h1>
+        </center>
+        <h:form>
+            <div class="card">
+                <center>
+                    <h2 style="margin-top:0">Barras de desplazamiento</h2>
+                    <p:scrollPanel style="width:300px;height:350px">
+                        <p class="p-m-0 p-p-3">
+                            Cuál es cuál, cuál es el cómo?
+                            Quién sabe cómo conducirse?
+
+                            Qué naturales son los peces!
+                            Nunca parecen inoportunos.
+
+                            Están en el mar invitados
+                            y se visten correctamente
+                            sin una escama de menos,
+                            condecorados por el agua.
+
+                            Yo todos los días pongo
+                            no sólo los pies en el plato,
+                            sino los codos, los riñones,
+                            la lira, el alma, la escopeta.
+
+                            No sé qué hacer con las manos
+                            y he pensado venir sin ellas,
+                            pero dónde pongo el anillo?
+                            Qué pavorosa incertidumbre!
+
+                            Y luego no conozco a nadie.
+                            No recuerdo sus apellidos.
+
+                            Me parece conocer a usted.
+                            No es usted un contrabandista?
+                            Y usted señora no es la amante
+                            del alcohólico poeta
+                            que se paseaba sin cesar,
+                            sin rumbo fijo por las cornisas?
+                            Voló porque tenía alas.
+                            Y usted continúa terrestre.
+                            Me gustaría haberla entregado
+                            como india viuda a un gran brasero,
+                            no podríamos quemarla ahora?
+                            Resultaría palpitante!
+
+                            Otra vez en una Embajada
+                            me enamoré de una morena,
+                            no quiso desnudarse allí,
+                            y yo se lo increpé con dureza:
+                            estás loca, estatua silvestre,
+                            cómo puedes andar vestida?
+
+                            Me desterraron duramente
+                            de ésa y de otras reuniones,
+                            si por error me aproximaba
+                            cerraban ventanas y puertas.
+
+                            Anduve entonces con gitanos
+                            y con prestidigitadores,
+                            con marineros sin buque,
+                            con pescadores sin pescado,
+                            pero todos tenían reglas,
+                            inconcebibles protocolos
+                            y mi educación lamentable
+                            me trajo malas consecuencias.
+
+                            Por eso no voy y no vengo,
+                            no me visto ni ando desnudo,
+                            eché al pozo los tenedores,
+                            las cucharas y los cuchillos.
+                            Sólo me sonrío a mí solo,
+                            no hago preguntas indiscretas
+                            y cuando vienen a buscarme,
+                            con gran honor, a los banquetes,
+                            mando mi ropa, mis zapatos,
+                            mi camisa con mi sombrero,
+                            pero aún así no se contentan:
+                            iba sin corbata mi traje.
+
+                            Así para salir de dudas
+                            me decidí a una vida honrada
+                            de la más activa pereza,
+                            purifiqué mis intenciones,
+                            salí a comer conmigo solo
+                            y así me fui quedando mudo.
+                            A veces me saque a bailar,
+                            pero sin gran entusiasmo,
+                            y me acuesto solo, sin ganas,
+                            por no equivocarme de cuarto.
+
+                            Adiós porque vengo llegando.
+                            Buenos días, me voy de prisa.
+
+                            Cuando quieran verme ya saben:
+                            búsquenme donde no estoy
+                            y si les sobra tiempo y boca
+                            pueden hablar con mi retrato.
+                        </p>
+                    </p:scrollPanel>
+                </center>
+            </div>
+
+            <div class="card">
+                <center>
+                    <h2>ScrollPanel nativo</h2>
+                    <p:scrollPanel mode="native" style="width:250px;height:200px">
+                        <p class="p-m-0">
+                            Cuál es cuál, cuál es el cómo?
+                            Quién sabe cómo conducirse?
+
+                            Qué naturales son los peces!
+                            Nunca parecen inoportunos.
+
+                            Están en el mar invitados
+                            y se visten correctamente
+                            sin una escama de menos,
+                            condecorados por el agua.
+
+                            Yo todos los días pongo
+                            no sólo los pies en el plato,
+                            sino los codos, los riñones,
+                            la lira, el alma, la escopeta.
+
+                            No sé qué hacer con las manos
+                            y he pensado venir sin ellas,
+                            pero dónde pongo el anillo?
+                            Qué pavorosa incertidumbre!
+
+                            Y luego no conozco a nadie.
+                            No recuerdo sus apellidos.
+
+                            Me parece conocer a usted.
+                            No es usted un contrabandista?
+                            Y usted señora no es la amante
+                            del alcohólico poeta
+                            que se paseaba sin cesar,
+                            sin rumbo fijo por las cornisas?
+                            Voló porque tenía alas.
+                            Y usted continúa terrestre.
+                            Me gustaría haberla entregado
+                            como india viuda a un gran brasero,
+                            no podríamos quemarla ahora?
+                            Resultaría palpitante!
+
+                            Otra vez en una Embajada
+                            me enamoré de una morena,
+                            no quiso desnudarse allí,
+                            y yo se lo increpé con dureza:
+                            estás loca, estatua silvestre,
+                            cómo puedes andar vestida?
+
+                            Me desterraron duramente
+                            de ésa y de otras reuniones,
+                            si por error me aproximaba
+                            cerraban ventanas y puertas.
+
+                            Anduve entonces con gitanos
+                            y con prestidigitadores,
+                            con marineros sin buque,
+                            con pescadores sin pescado,
+                            pero todos tenían reglas,
+                            inconcebibles protocolos
+                            y mi educación lamentable
+                            me trajo malas consecuencias.
+
+                            Por eso no voy y no vengo,
+                            no me visto ni ando desnudo,
+                            eché al pozo los tenedores,
+                            las cucharas y los cuchillos.
+                            Sólo me sonrío a mí solo,
+                            no hago preguntas indiscretas
+                            y cuando vienen a buscarme,
+                            con gran honor, a los banquetes,
+                            mando mi ropa, mis zapatos,
+                            mi camisa con mi sombrero,
+                            pero aún así no se contentan:
+                            iba sin corbata mi traje.
+
+                            Así para salir de dudas
+                            me decidí a una vida honrada
+                            de la más activa pereza,
+                            purifiqué mis intenciones,
+                            salí a comer conmigo solo
+                            y así me fui quedando mudo.
+                            A veces me saque a bailar,
+                            pero sin gran entusiasmo,
+                            y me acuesto solo, sin ganas,
+                            por no equivocarme de cuarto.
+
+                            Adiós porque vengo llegando.
+                            Buenos días, me voy de prisa.
+
+                            Cuando quieran verme ya saben:
+                            búsquenme donde no estoy
+                            y si les sobra tiempo y boca
+                            pueden hablar con mi retrato.
+                        </p>
+                    </p:scrollPanel>
+                </center>
+            </div>
+        </h:form>
+    </h:body>
+</html>

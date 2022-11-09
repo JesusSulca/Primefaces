@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>ScrollPanel</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {
+                background-color: white
+            }
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: white">  
+                <p:menuitem value="Accordion" url="./acordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./scrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./tabView.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="PanelGrid" url="./panelGrid.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h:form id="Grillas">
+                <div class="card">
+                    <h1 style="margin-top:0">Basic</h1>
+                    <p:panelGrid columns="2">
+                        <h:outputText value="Name:"/>
+                        <h:outputText value="Kobe Bryant"/>
+
+                        <h:outputText value="Team:"/>
+                        <h:outputText value="Los Angeles Lakers"/>
+
+                        <h:outputText value="Position:"/>
+                        <h:outputText value="Shooting Guard"/>
+
+                        <h:outputText value="Number:"/>
+                        <h:outputText value="24"/>
+                    </p:panelGrid>
+                </div>
+            </h:form>
+            
+            <div class="card">
+                <br/>
+    <h1>Responsive (Basic)</h1>
+    <p:panelGrid columns="3" layout="grid" styleClass="showcase-text-align-center">
+        <h:outputText value="Jugador"/>
+        <h:outputText value="Edad"/>
+        <h:outputText value="Pais"/>
+
+        <h:outputText value="Neymar Jr"/>
+        <h:outputText value="30 Años"/>
+        <h:outputText value="Brasil"/>
+
+        <h:outputText value="lionel messi "/>
+        <h:outputText value="35 Años"/>
+        <h:outputText value="Argentino"/>
+    </p:panelGrid>
+    
+    
+</div>
+        </center>
+    </h:body>
+</html>
+
+

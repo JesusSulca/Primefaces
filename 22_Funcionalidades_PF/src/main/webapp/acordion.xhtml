@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Accordion</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {
+                background-color: white
+            }
+        </style>
+        <h:form>  
+            <p:menubar style="background-color: white">  
+                <p:menuitem value="Accordion" url="./acordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./scrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./tabView.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="PanelGrid" url="./panelGrid.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;" >Acordion</h1>
+        </center>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <h2>Selección Multiple</h2>
+            <p:accordionPanel multiple="true" style="width: 80%">
+                <p:tab title="Los tres cerditos">
+                    <h:panelGrid cellpadding="30">
+                        <h:outputText
+                            value="En el bosque vivían tres cerditos que decidieron construir una casa cada uno, para protegerse de un lobo que rondaba por allí. Uno de los cerditos hizo su casa de paja; otro, de madera y otro, con ladrillos.
+                            Un día el primer cerdito vio que se acercaba el lobo y entró corriendo en su casa de paja. El lobo sopló, la derribó y el cerdito se fue corriendo a la casa de madera, donde vivía su amigo.
+                            El lobo fue hasta la casa de madera, pero esta vez sopló más fuerte y también la derribó. Los dos cerditos salieron corriendo a la casa de ladrillos de su otro amigo.
+                            El lobo también fue hasta la puerta de esta casa, pero cuando sopló, no la pudo derribar. Los tres cerditos estaban muy contentos.
+                            Este es un cuento popular que busca transmitir una moraleja: cuando una persona se esfuerza mucho, obtiene mejores resultados." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="La gallina de los huevos de oro">
+                    <h:panelGrid cellpadding="10">
+                        <h:outputText value="En una granja vivía una pareja que tenía varias gallinas. Un día la mujer entró al gallinero y vio que una gallina no había puesto un huevo común, sino que había puesto un huevo de oro.
+
+                                      Los días pasaban y la gallina ponía un huevo de oro por día. El hombre decidió que tenían que matar y abrir la gallina, porque creía que adentro tenía oro. La mujer accedió.
+                                      Pero cuando la abrieron, se dieron cuenta de que era una gallina como cualquier otra.
+                                      Esta fábula también contiene una moraleja: no hay que ser ambicioso." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="El zorro y el tigre">
+                    <h:panelGrid cellpadding="10">
+                        <h:outputText value="Cierta vez, un tigre quiso cazar a un zorro. Pero el zorro lo detuvo y le dijo que él era el rey de los animales y, por eso, el tigre no debía dañarlo.
+                                      El tigre le pidió que se lo demostrara, entonces, el zorro le dijo que lo acompañara porque al ser el rey, todos los animales huirían de él. Y así fue, todos los animales se iban corriendo cuando los veían llegar y el tigre le creyó.
+                                      Lo que el tigre no sabía era que los animales no huían del supuesto rey, el zorro, sino que huían del tigre, porque le tenían miedo.
+                                      Esta fábula china tiene una moraleja: es mejor usar la inteligencia que la fuerza para superar una situación difícil." />
+                    </h:panelGrid>
+                </p:tab>
+            </p:accordionPanel>
+
+            <div class="card">
+                <h2>Cambio de evento</h2>
+                <p:accordionPanel>
+                    <p:ajax event="tabChange" listener="#{eventos.onTabChange}" update=":form:msgs"/>
+                    <p:ajax event="tabClose" listener="#{eventos.onTabClose}" update=":form:msgs"/>
+
+                    <p:tab title="El canguro">
+                        <p class="p-m-0">
+                            Se cree que antiguamente los canguros tenían cuatro patas, que utilizaban para caminar. Pero un día, había unos canguros descansando tranquilamente, hasta que vieron un cazador que se ocultaba en la maleza.
+
+                            El hombre se acercó a un canguro, y el canguro, muy asustado porque nunca había visto a una persona, salió corriendo. El cazador lo siguió y lo alcanzó en muy poco tiempo. Pero el canguro pudo esconderse antes de que el hombre lo cazara.
+                            Se hizo de noche y el hombre hizo una fogata, el canguro se dio cuenta de que el hombre no se iría, entonces, tendría que escaparse sin ser visto. Correr rápido con las cuatro patas no le serviría, así que decidió ir lento utilizando solo las dos patas traseras para no hacer ruido. El canguro se fue caminando solo con dos patas, cuando estuvo en un lugar seguro probó si podía soltar y lo logró.
+                            Finalmente, el canguro llegó al lugar donde estaban los otros canguros, les explicó cómo había escapado y les enseñó a caminar y a saltar en dos patas. Desde ese momento, los canguros caminan y saltan utilizando solo sus patas traseras.
+                            Esta es una leyenda de Australia, que se transmitió de generación en generación, y explica el origen de la forma de andar de los canguros.
+                        </p>
+                    </p:tab>
+                    <p:tab title="El león y el mosquito">
+                        <p class="p-m-0">
+                            Un león estaba durmiendo en la selva tranquilamente, hasta que empezó a escuchar un zumbido en la oreja. El ruido lo había provocado un mosquito, que le dijo al felino: “Yo soy más fuerte que el rey de la selva”. El león le dijo que lo dejara descansar. Pero el mosquito le dijo que podía vencerlo y el león lo desafió para que lo hiciera.
+                            El mosquito se movía rápido y consiguió picar al león. En cambio, el león no le hizo ni un rasguño al insecto y se dio por vencido. El mosquito estaba muy contento con su triunfo hasta que de repente se dio cuenta de que había sido atrapado por una tela de araña.
+                            Este cuento tradicional invita a pensar que no es necesario competir por todo y que siempre puede haber alguien que sea mejor que uno en una actividad.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Los halcones y el rey">
+                        <p class="p-m-0">
+                            Un día un rey recibió dos pichones de halcón como regalo. El rey le pidió a uno de sus hombres que los cuidara y que los entrenara. Pasaron algunos meses y el rey fue a ver cómo estaban sus halcones y vio que uno volaba, pero que otro no se movía de la rama en la que estaba apoyado. El súbdito no sabía qué estaba pasando con este halcón.
+                            El rey decidió ofrecer una recompensa a la persona que pudiera hacer volar al halcón. Un día, volvió al árbol donde estaban los halcones y vio que estaban los dos volando. Averiguó quién era la persona que lo había hecho volar: un campesino.
+                            El rey fue a conversar con el campesino y le preguntó cómo lo había logrado. El campesino le contestó que había roto la rama y que el halcón se había echado a volar en ese momento.
+                            Este cuento tradicional busca transmitir la enseñanza de que es necesario que algunas cosas cambien para que otras puedan suceder.                        </p>
+                    </p:tab>
+                </p:accordionPanel>
+            </div>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>TabView</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {
+                background-color: white
+            }
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: white">  
+               <p:menuitem value="Accordion" url="./acordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./scrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./tabView.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="PanelGrid" url="./panelGrid.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;">TabView</h1>
+        </center>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <div class="card">
+                
+                <p:tabView dynamic="true" cache="true" style="width: 60%">
+                    <p:tab title="Imagen">
+                        <p:panel id="hpnl" header="Solo horizontal" style="width: 250px">
+                            <img src="image/valle grande.png" alt="" style="width: 200px"/>
+                        </p:panel>
+                        <p:draggable for="hpnl" axis="x" />
+                    </p:tab>
+                    <p:tab title="Frase I">
+                        <p class="p-m-0">
+                            No puedo enseñar nada a nadie. Solo puedo hacerles pensar (Sócrates)
+                            Sócrates era conocido por su método socrático de enseñanza, que se caracterizaba
+                            por hacer a sus discípulos reflexionar. El solo daba las herramientas para que 
+                            ellos mismo llegarán a las soluciones. De hecho, Sócrates ha sido la inspiración 
+                            del Coaching. Los coachs son facilitadores del desarrollo personal que hacen que 
+                            sus clientes desarrollen todo su potencial y superen sus creencias limitantes.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Frase II">
+                        <p class="p-m-0">
+                            El conocimiento es poder (Francis Bacon)
+                            Aprender cosas nuevas nos permite crecer como seres humanos y nos convierte en 
+                            personas más preparadas para adaptarnos al entorno. El conocimiento nos convierte en personas sabias.
+                        </p>
+                    </p:tab>
+                </p:tabView>
+            </div>
+
+            <div class="card">
+                <h2>Eventos</h2>
+                <p:tabView>
+                    <p:ajax event="tabChange" listener="#{eventos.onTabChange}" update=":form:msgs"/>
+                    <p:ajax event="tabClose" listener="#{eventos.onTabClose}" update=":form:msgs"/>
+
+                    <p:tab title="Frase I" closable="true">
+                        <p class="p-m-0">
+                            La pobreza no viene por la disminución de las riquezas, sino por la multiplicación de los deseos (Platón)
+                        </p>
+                    </p:tab>
+                    <p:tab title="Frase II" closable="true">
+                        <p class="p-m-0">
+                            Exígete mucho a ti mismo y espera poco de los demás. Así te ahorrarás disgustos (Confucio)
+                        </p>
+                    </p:tab>
+                    <p:tab title="Frase III" closable="true">
+                        <p class="p-m-0">
+                            Nuestras convicciones más arraigadas, más indubitables, son las más sospechosas. Ellas constituyen nuestro límite, nuestros confines, nuestra prisión (José Ortega y Gasset)
+                        </p>
+                    </p:tab>
+
+                    <p:tab title="Frase IV" closable="true">
+                        <p class="p-m-0">
+                            Nuestra envidia siempre dura más que la felicidad de quien envidiamos (Heráclito)
+                        </p>
+                    </p:tab>
+                </p:tabView>
+            </div>
+
+            <div class="card">
+                <h3>Orientación Izquierda</h3>
+                <p:tabView orientation="left">
+                    <p:tab title="Arthur Schopenhauer">
+                        <h:panelGrid cellpadding="10">
+                            <h:outputText
+                                value="En general, las nueve décimas partes de nuestra felicidad se fundamentan en la salud " />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Eckhart Tolle">
+                        <h:panelGrid cellpadding="10">
+                            <h:outputText value="El pasado no tiene poder sobre el momento presente" />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="William James">
+                        <h:panelGrid cellpadding="10">
+                            <h:outputText value="Cree que tu vida merece la pena ser vivida y esa creencia ayudará a crear el hecho " />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:tabView>
+            </div>
+        </h:form>
+    </h:body>
+</html>

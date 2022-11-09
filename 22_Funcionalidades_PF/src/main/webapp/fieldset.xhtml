@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Fieldset</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {
+                background-color: white
+            }
+        </style>
+        <h:form>  
+            <p:menubar style="background-color: white">  
+                <p:menuitem value="Accordion" url="./acordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./scrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./tabView.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="PanelGrid" url="./panelGrid.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;">Fieldset</h1>
+        </center>
+        <h:form>
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <h2 class="p-mt-0">Regular</h2>
+            <p:fieldset legend="Básico">
+                <p class="p-m-0">
+                    Valle Grande es actualmente un Centro de Educación Superior constituido por la Promotora de Obras Sociales
+                    y de Instrucción Popular (PROSIP) el 25 de febrero de 1965, reconocido por el Ministerio de Agricultura 
+                    mediante Resolución Directoral N° 04383-AG-DGAG del 2 de junio de 1983 y por el Ministerio de Educación 
+                    mediante Resolución Ministerial N°0751-92-ED.
+                </p>
+            </p:fieldset>
+
+            <h2>Conmutable</h2>
+            <p:fieldset legend="Conmutable" toggleable="true" toggleSpeed="100">
+                <p:ajax event="toggle" listener="#{eventos.handleToggle}" update="msgs"/>
+                <p class="p-m-0">
+                    Valle Grande es actualmente un Centro de Educación Superior constituido por la Promotora de Obras Sociales
+                    y de Instrucción Popular (PROSIP) el 25 de febrero de 1965, reconocido por el Ministerio de Agricultura 
+                    mediante Resolución Directoral N° 04383-AG-DGAG del 2 de junio de 1983 y por el Ministerio de Educación 
+                    mediante Resolución Ministerial N°0751-92-ED.
+                </p>
+            </p:fieldset>
+
+        </h:form>
+    </h:body>
+</html>
